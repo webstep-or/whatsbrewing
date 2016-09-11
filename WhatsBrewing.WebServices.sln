@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.WBService", "WhatsBrewing.WBService\WhatsBrewing.WBService.csproj", "{FCD8E470-333C-44A3-AF46-444173382075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.HubClient", "WhatsBrewing.HubClient\WhatsBrewing.HubClient.csproj", "{6BBC0C90-5C83-455E-9589-65DA86105D02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.DAL", "WhatsBrewing.DAL\WhatsBrewing.DAL.csproj", "{BACD00C2-96F1-4949-9B69-0FDFA9A8676F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.Importer", "WhatsBrewing.Importer\WhatsBrewing.Importer.csproj", "{9D5B9970-BF68-49AA-8373-6F6A3642142B}"
+EndProject
+Global	
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCD8E470-333C-44A3-AF46-444173382075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD8E470-333C-44A3-AF46-444173382075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD8E470-333C-44A3-AF46-444173382075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD8E470-333C-44A3-AF46-444173382075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BACD00C2-96F1-4949-9B69-0FDFA9A8676F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BACD00C2-96F1-4949-9B69-0FDFA9A8676F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BACD00C2-96F1-4949-9B69-0FDFA9A8676F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BACD00C2-96F1-4949-9B69-0FDFA9A8676F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D5B9970-BF68-49AA-8373-6F6A3642142B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D5B9970-BF68-49AA-8373-6F6A3642142B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D5B9970-BF68-49AA-8373-6F6A3642142B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D5B9970-BF68-49AA-8373-6F6A3642142B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Upload What's Brewing data</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <style type="text/css">
+    </style>
+
+</head>
+<body>
+    <div>
+        <input type="file" name="UploadFile" id="txtUploadFile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+    </div>
+
+    <script type="text/javascript">
+
+        $('#txtUploadFile').on('change', function (e) {
+            var files = e.target.files;
+            if (files.length > 0) {
+                //if (this.value.lastIndexOf('.pdf') === -1) {
+                //    alert('Only pdf files are allowed!');
+                //    this.value = '';
+                //    return;
+                //}
+                if (window.FormData !== undefined) {
+                    var data = new FormData();
+                    for (var x = 0; x < files.length; x++) {
+                        data.append("file" + x, files[x]);
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        //url: '/api/FileController/UploadFile?id=' + myID,
+                        url: '/api/Files/UploadFile',
+                        contentType: false,
+                        processData: false,
+                        data: data
+                    });
+                } else {
+                    alert("This browser doesn't support HTML5 file uploads!");
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>

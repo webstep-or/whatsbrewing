@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <!--Script references. -->
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    <script src="../Scripts/jquery.signalR-2.2.0.js"></script>
+
+    <h2>Connected clients</h2>
+       
+    <div >
+        <label id="statusLabel"></label>
+        <label id="connectedCountLabel"></label>
+
+        <table border="1" id="notificationTable">
+            <thead>
+                <tr><th>Global Identificator</th></tr>
+            </thead>            
+        </table>
+        
+    </div>   
+
+    <script type="text/javascript">
+
+        var table = document.getElementById('notificationTable');
+        var lbl = document.getElementById('statusLabel');
+
+        function clearRows()
+        {
+            // Clear all rows except header row
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+        }
+
+        function insertRow(globalId)
+        {
+            var row = table.insertRow(1);
+
+            var cell1 = row.insertCell(0);
+
+            // Add some text to the new cells:
+            cell1.innerHTML = globalId;
+        }
+ 
+        function onConnectionsChanged(globalIds) {
+
+            // clear rows
+            clearRows();
+                        
+            var globals = globalIds.split(",");
+
+            updateCounter(globals.length);
+
+            // Create a new row for each global id
+            globals.forEach(insertRow);
+        };
+
+        function onHello() {
+
+            insertRow("Hello was invoked");
+        };
+
+        function onSetColor(colorName) {
+
+            insertRow("Color was changed to " + colorName);
+        };
+
+        function updateStatus() {
+            lbl.innerText = 'Connected';
+        }
+
+        function updateStatus2() {
+            lbl.innerText = 'Reconnecting';
+            updateCounter('');
+            clearRows();
+        }
+
+        function updateStatus3() {
+            lbl.innerText = 'Disconnected';
+            updateCounter('');
+            clearRows();
+        }
+
+        function updateCounter(count) {
+            var lbl = document.getElementById('connectedCountLabel');
+            lbl.innerText = count;
+        }
+
+    $(function () {
+
+        var connection = $.hubConnection();
+
+        connection.logging = true;
+        
+        var hub = connection.createHubProxy('whatsbrewinghub');
+        //hub.on('connectionschanged', onConnectionsChanged);
+        hub.on('Hello', onHello);
+        hub.on('SetColor', onSetColor);
+        
+        connection.start()
+            .done(updateStatus);
+
+        hub.connection.reconnecting(updateStatus2);
+        hub.connection.reconnected(updateStatus);
+        hub.connection.disconnected(updateStatus3);
+               
+        connection.start().done(function () {
+            hub.invoke('Hello');
+        });
+    });    
+
+    </script>
+
+</body>
+</html>

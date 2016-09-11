@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Send push messages</title>
+
+    <style type="text/css">
+        .glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+    </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Lekton:400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            $(document).ready(function () {
+
+                var category = "Info";
+
+                $("#sendbutton").click(function () {
+
+
+                    var category = $("input[name=optradio]:checked").val();
+
+                    var txt = $("textarea").val();
+
+                    if (txt.length == 0) {
+                        alert('Please write something.');
+                        return;
+                    }
+
+                    $("#btnspan").addClass("glyphicon glyphicon-refresh spinning");
+
+                    var message =
+                        {
+                            Category: category,
+                            Message: txt
+                        }
+
+                    $.post("/api/Push/SendMessage/", message, function () {
+
+                    }).done(function (value) {
+                        alert(value);
+                        document.getElementById('wbmessage').value = "";
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        $('#value1').text(jqXHR.responseText || textStatus);
+                    }).always(function (value) {
+                        $("#btnspan").removeClass("glyphicon glyphicon-refresh spinning");
+                    });
+
+                });
+            });
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <style type="text/css">
+        body {
+            font-family: 'Lekton', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h1 {
+            font-family: 'Lekton', sans-serif;
+            margin: 60px 0px 30px;
+        }
+
+        h2 {
+            font-family: 'Lekton', sans-serif;
+            margin: 40px 0px 20px;
+        }
+
+        .btn-success {
+            background-color: #ec7e63;
+            border-color: #ec7e63;
+            padding: 15px 40px;
+            font-size: 16px;
+        }
+
+        .row.send-button {
+            margin: 30px 0px;
+        }
+
+        .radio label {
+            float: left;
+        }
+
+        .result {
+            color: #00ff7e;
+        }
+
+        .form-control {
+            font-size: 20px;
+        }
+
+        input[type=radio]:checked {
+            color: #f00;
+            font-style: normal;
+        }
+
+        p {
+            margin: 0px 0px 20px;
+        }
+
+    </style>
+
+    <div class="container-fluid">
+        <!--<div class="container">-->
+            <div class="col-sm-12 text-center">
+                <h1>Whats Brewing push message center</h1>
+                <p>
+                    Sends push to Android and iPhones
+
+                </p>
+            </div>
+            <textarea id="wbmessage" class="form-control" rows="6" cols="50"></textarea>
+        <!--</div>-->
+        <!--<div class="container">-->
+
+        <br />
+            <div class="btn-group">
+                <label class="radio-inline"><input checked type="radio" name="optradio" value="Info">Info</label>
+                <label class="radio-inline"><input type="radio" name="optradio" value="Music">Music</label>
+                <label class="radio-inline"><input type="radio" name="optradio" value="Food">Food</label>
+                <label class="radio-inline"><input type="radio" name="optradio" value="Game">Game</label>
+                
+            </div>
+        <br />
+        <br />
+            <div>
+                <button id="sendbutton" type="button" class="btn btn-success pull-right">
+                    <span id='btnspan' aria-hidden="true"></span> Send
+                </button>
+               
+            </div>
+            
+        <!--</div>-->
+        
+    </div>
+    <span id='value1'></span>
+</body>
+</html>

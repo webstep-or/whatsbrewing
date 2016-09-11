@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.CAHubClient", "WhatsBrewing.CAHubClient\WhatsBrewing.CAHubClient.csproj", "{6F6B7DB9-A2F1-40E1-ACC3-434A8327D066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.HubClient", "WhatsBrewing.HubClient\WhatsBrewing.HubClient.csproj", "{6BBC0C90-5C83-455E-9589-65DA86105D02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.HueClient", "WhatsBrewing.HueClient\WhatsBrewing.HueClient.csproj", "{D2747C8A-23FE-4A6B-98DC-BEA35BC57FB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.Tests", "WhatsBrewing.Tests\WhatsBrewing.Tests.csproj", "{281E08E6-762B-412E-8EEF-116B942652BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsBrewing.FileUpload", "WhatsBrewing.FileUpload\WhatsBrewing.FileUpload.csproj", "{6EC16CAD-6E57-4DA4-8E16-6052256D77C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F6B7DB9-A2F1-40E1-ACC3-434A8327D066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F6B7DB9-A2F1-40E1-ACC3-434A8327D066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F6B7DB9-A2F1-40E1-ACC3-434A8327D066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F6B7DB9-A2F1-40E1-ACC3-434A8327D066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBC0C90-5C83-455E-9589-65DA86105D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2747C8A-23FE-4A6B-98DC-BEA35BC57FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2747C8A-23FE-4A6B-98DC-BEA35BC57FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2747C8A-23FE-4A6B-98DC-BEA35BC57FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2747C8A-23FE-4A6B-98DC-BEA35BC57FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281E08E6-762B-412E-8EEF-116B942652BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281E08E6-762B-412E-8EEF-116B942652BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281E08E6-762B-412E-8EEF-116B942652BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281E08E6-762B-412E-8EEF-116B942652BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC16CAD-6E57-4DA4-8E16-6052256D77C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC16CAD-6E57-4DA4-8E16-6052256D77C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC16CAD-6E57-4DA4-8E16-6052256D77C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC16CAD-6E57-4DA4-8E16-6052256D77C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
